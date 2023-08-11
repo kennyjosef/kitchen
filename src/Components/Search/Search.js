@@ -30,15 +30,15 @@ const Search = () => {
       <h4>Search Our Special Recipes</h4>
       <div className={classes.search}>
        <form action="">
-          <label htmlFor="">Search for recipe</label> 
+          <p className={classes.p}>Search by Nutrient</p> 
           <div className={classes.formDiv}>
-          <input type="number" value={minProtein} onChange={(e)=>setMinProtein(e.target.value)} />
-          <input type="number"value={maxProtein}onChange={(e)=>setMaxProtein(e.target.value)}/>
-          <input  onClick={setMeal} type="submit" value="Get Recipe" className={classes.btn}/>
+          <input type="number" placeholder="min"value={ minProtein} onChange={(e)=>setMinProtein(e.target.value)} />
+          <input type="number" placeholder="max"value={maxProtein}onChange={(e)=>setMaxProtein(e.target.value)}/>
+          <button  onClick={setMeal} className={classes.btn}>Search</button>
           </div>
        </form>
       </div>
-     
+      <div className={classes.data}>
         {
           meal.map((items, index)=> 
           <CardsRecipe 
@@ -52,6 +52,8 @@ const Search = () => {
           />
           )
       }
+      </div>
+     
 
     </div>
   )

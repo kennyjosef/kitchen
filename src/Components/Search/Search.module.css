@@ -6,7 +6,7 @@
 .searchSection{
     background-color: whitesmoke;
     padding-top: 20px;
-    height: 500px;
+    /* height: 500px; */
     
 }
 .searchSection h4{
@@ -43,7 +43,11 @@ form label{
     background-color: orange;
     color: white;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
     border: none;
 }
 .formDiv{
@@ -52,6 +56,16 @@ form label{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.data{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.p{
+    text-align: center;
 }
 @media screen and (max-width:768px) {
 .searchSection{
@@ -64,20 +78,25 @@ form label{
 }
 .search{
     width: 100%;
-    padding: 20px;
+    /* padding: 20px; */
 }
-.formDiv{
+
+form{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
 }
+
 .search div input{
     width: 80%;
     margin-bottom: 10px;
 }
 .btn{
+    margin: auto;
+    padding: 0px;
+}
+.data{
+    flex-direction: column;
     width: 100%;
+     align-items: center;
 }
 }

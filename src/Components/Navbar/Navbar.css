@@ -67,8 +67,13 @@
         padding: 30px;
         text-decoration: none;
         list-style-type: none;
-        cursor: pointer;
         
+    }
+    .navShow li{
+        cursor: pointer;
+        width: 50%;
+        margin: auto;
+        padding: 5px 0px 5px 0px;
     }
   
     .hamburger{
