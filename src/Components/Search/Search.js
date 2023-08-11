@@ -29,12 +29,14 @@ const Search = () => {
     <div className={classes.searchSection}>
       <h4>Search Our Special Recipes</h4>
       <div className={classes.search}>
-        <label htmlFor="">Search for recipe</label> 
-        <div>
+       <form action="">
+          <label htmlFor="">Search for recipe</label> 
+          <div className={classes.formDiv}>
           <input type="number" value={minProtein} onChange={(e)=>setMinProtein(e.target.value)} />
           <input type="number"value={maxProtein}onChange={(e)=>setMaxProtein(e.target.value)}/>
-          <Button  onClick={setMeal}name="Get Recipe"/>
-        </div>
+          <input  onClick={setMeal} type="submit" value="Get Recipe" className={classes.btn}/>
+          </div>
+       </form>
       </div>
      
         {
