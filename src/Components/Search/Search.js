@@ -28,18 +28,14 @@ const Search = () => {
   return (
     <div className={classes.searchSection}>
       <h4>Search Our Special Recipes</h4>
-      
-      <label htmlFor="">Search for recipe</label>
-      <input type="number" 
-      value={minProtein}
-      onChange={(e)=>setMinProtein(e.target.value)}
-      />
-      <input 
-      type="number"
-      value={maxProtein}
-      onChange={(e)=>setMaxProtein(e.target.value)}
-      />
-      <Button  onClick={setMeal}name="Get Recipe"/>
+      <div className={classes.search}>
+        <label htmlFor="">Search for recipe</label> 
+        <div>
+          <input type="number" value={minProtein} onChange={(e)=>setMinProtein(e.target.value)} />
+          <input type="number"value={maxProtein}onChange={(e)=>setMaxProtein(e.target.value)}/>
+          <Button  onClick={setMeal}name="Get Recipe"/>
+        </div>
+      </div>
      
         {
           meal.map((items, index)=> 
