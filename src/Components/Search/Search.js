@@ -3,12 +3,24 @@ import axios from 'axios'
 import classes from './Search.module.css'
 import Button from '../Button/Button'
 import CardsRecipe from '../CardsRecipe/CardsRecipe'
+import { getRoles } from '@testing-library/react'
 const Search = () => {
-  // const apiKey = "2c37e09a9c0d4031b6a92148cf3b63d4";
-  // const baseUrl = "https://api.spoonacular.com/recipes/complexSearch"
-  const [minProtein, setMinProtein]=useState(100);
+  const [minProtein, setMinProtein]=useState(50);
   const [maxProtein, setMaxProtein]= useState(200);
   const [meal, setMeal]= useState([])
+  const handleMinProtein=(e)=>{
+    let userInput=e.target.value
+    setMinProtein(userInput)
+  }
+  const handleMaxProtein=(e)=>{
+    let userMaxProtein=e.target.value
+    setMaxProtein(userMaxProtein)
+  }
+  const handleSearch =(e)=>{
+    e.preventDefault()
+    // setMeal()
+
+  }
     useEffect(()=>{
       const getRecipe= ()=>{
         axios.get(`https://api.spoonacular.com/recipes/findByNutrients?apiKey=2c37e09a9c0d4031b6a92148cf3b63d4&minProtein=${minProtein}&maxProtein=${maxProtein}&number=10`)
@@ -29,14 +41,24 @@ const Search = () => {
     <div className={classes.searchSection}>
       <h4>Search Our Special Recipes</h4>
       <div className={classes.search}>
-       <form action="">
+       <div className={classes.form}>
           <p className={classes.p}>Search by Nutrient</p> 
           <div className={classes.formDiv}>
-          <input type="number" placeholder="min"value={ minProtein} onChange={(e)=>setMinProtein(e.target.value)} />
-          <input type="number" placeholder="max"value={maxProtein}onChange={(e)=>setMaxProtein(e.target.value)}/>
-          <button  onClick={setMeal} className={classes.btn}>Search</button>
+          <input 
+          type="number" 
+          placeholder="min"
+          value={ minProtein} 
+          onChange={handleMinProtein} 
+          />
+          <input 
+          type="number" 
+          placeholder="max"
+          value={maxProtein}
+          onChange={handleMaxProtein}
+          />
+          <button  onClick={handleSearch} className={classes.btn}>Search</button>
           </div>
-       </form>
+       </div>
       </div>
       <div className={classes.data}>
         {
